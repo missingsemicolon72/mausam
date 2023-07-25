@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Page Not Found - Mausam</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    {{>header}}
+    <div class="relative h-screen">
+        <img class="absolute inset-0 w-full h-full object-cover brightness-50" src="images/404-bg.jpg" alt="hero-img">
+        <div class="absolute inset-0 flex flex-col justify-center items-center font-['Roboto']">
+            <p class="font-bold text-9xl text-white drop-shadow-[1px_1px_2px_rgba(0,0,0,0.4)]">404</p>
+            <p class="font-bold text-3xl text-white drop-shadow-[1px_1px_2px_rgba(0,0,0,0.4)]">Page Not Found</p>
+            <p class="my-10 w-1/2 font-medium text-2xl text-white text-center drop-shadow-[1px_1px_2px_rgba(0,0,0,0.6)]">
+                Seems like you got lost. Huh?<br>
+                No worries. Let's get you back home!
+            </p>
+            <button type="button" onclick="window.location.href = '/'" class="py-3 px-5 font-normal rounded-full text-2xl text-white bg-orange-600 shadow-[1px_1px_3px_rgba(0,0,0,0.6)] transition-all hover:bg-blue-700">Home Sweet Home</button>
+        </div>
+    </div>
+    {{>footer}}
+</body>
+</html>

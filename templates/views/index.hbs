@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mausam - Weather For India</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    {{>header}}
+    <div class="relative h-screen">
+        <img class="absolute inset-0 w-full h-full object-cover brightness-75" src="images/home-bg.jpg" alt="hero-img">
+        <div class="absolute inset-0 flex flex-col justify-center items-center text-black">
+            <h1 class="font-semibold text-7xl text-blue-600 drop-shadow-[1px_1px_2px_rgba(0,0,0,0.4)]">MAUSAM</h1>
+            <h4 class="mb-5 font-semibold text-4xl drop-shadow-[1px_1px_2px_rgba(0,0,0,0.4)]">
+                <span class="text-orange-500">Weather</span>
+                <span class="text-white">For</span>
+                <span class="text-lime-500">INDIA</span>
+            </h4>
+            <p class="my-5 w-1/2 font-medium text-2xl text-white text-center drop-shadow-[1px_1px_2px_rgba(0,0,0,0.6)]">
+                MAUSAM is a weather information application for Indian cities.<br>
+                Know more about your city's weather using this web application now!
+            </p>
+            <button type="button" onclick="window.location.href = './weather'" class="my-5 py-3 px-5 font-semibold rounded-full text-2xl text-white bg-orange-600 shadow-[1px_1px_3px_rgba(0,0,0,0.6)] transition-all hover:bg-blue-700">Check Weather</button>
+        </div>
+    </div>
+    {{>footer}}
+</body>
+</html>

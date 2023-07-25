@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Weather - Mausam</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    {{>header}}
+    <div class="relative h-screen">
+        <img class="absolute inset-0 w-full h-full object-cover" src="images/weather-bg.jpg" alt="hero-img">
+        <div class="absolute inset-0 flex flex-col justify-center items-center">
+            <form class="m-5 w-1/2 relative" id="searchForm">
+                <input type="text" id="cityName" class="p-5 w-full rounded-full text-xl text-white font-semibold bg-transparent border-2 border-white shadow-xl transition-all focus:outline-none focus:border-orange-500" placeholder="Enter city name" autocomplete="off" />
+                <input type="submit" value="Search" id="submitBtn" class="px-5 absolute top-2 right-2 bottom-2 rounded-full cursor-pointer text-xl text-white font-semibold bg-orange-500 transition-all hover:text-orange-500 hover:bg-white" />
+            </form>
+            <div id="weatherPanel" class="m-5 rounded-3xl border-2 border-white shadow-2xl bg-white/5 backdrop-blur-[10px] transition-all hover:border-orange-500">
+                <div class="p-5 flex flex-col gap-3 text-white">
+                    <div class="p-3 flex justify-between items-center">
+                        <span id="date" class="text-xl font-semibold transition-all hover:text-orange-500">Thursday, 1st January, 1970</span>
+                        <span id="loc" class="text-xl font-semibold transition-all hover:text-orange-500"></span>
+                        <span id="time" class="text-xl font-semibold transition-all hover:text-orange-500">05:30 AM</span>
+                    </div>
+                    <hr>
+                    <div class="p-3 flex justify-between items-center gap-20">
+                        <div class="flex flex-col gap-5 text-left">
+                            <div class="flex justify-between items-center gap-7">
+                                <div id="temp" class="text-7xl transition-all hover:text-orange-500">NaN&deg;</div>
+                                <div class="flex flex-col gap-3 text-left">
+                                    <div id="feels-like" class="text-xl transition-all hover:text-orange-500">Feels: NaN&deg;</div>
+                                    <div id="min-temp" class="text-xl transition-all hover:text-orange-500">Min: NaN&deg;</div>
+                                    <div id="max-temp" class="text-xl transition-all hover:text-orange-500">Max: NaN&deg;</div>
+                                </div>
+                            </div>
+                            <div id="details" class="text-3xl transition-all hover:text-orange-500">No data available</div>
+                        </div>
+                        <div class="flex flex-col gap-3">
+                            <div id="pressure" class="text-xl transition-all hover:text-orange-500">Pressure: NaN</div>
+                            <div id="humidity" class="text-xl transition-all hover:text-orange-500">Humidity: NaN</div>
+                            <div id="sea-lvl" class="text-xl transition-all hover:text-orange-500">Sea Level: NaN</div>
+                            <div id="gnd-lvl" class="text-xl transition-all hover:text-orange-500">Ground Level: NaN</div>
+                            <div id="visibility" class="text-xl transition-all hover:text-orange-500">Visibility: NaN</div>
+                        </div>
+                        <div class="flex flex-col gap-3">
+                            <div id="w-speed" class="text-xl transition-all hover:text-orange-500">Wind Speed: NaN</div>
+                            <div id="w-dir" class="text-xl transition-all hover:text-orange-500">Wind Direction: NaN</div>
+                            <div id="w-gusts" class="text-xl transition-all hover:text-orange-500">Wind Gusts: NaN</div>
+                            <div id="sunrise" class="text-xl transition-all hover:text-orange-500">Sunrise: NaN</div>
+                            <div id="sunset" class="text-xl transition-all hover:text-orange-500">Sunset: NaN</div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="p-3 transition-all hover:text-orange-500">All the above information is in the metric units system</div>
+                </div>
+            </div>
+            <div id="errorPanel" class="m-5 rounded-3xl border-4 border-red-600 shadow-2xl bg-red-600/20 backdrop-blur-[10px]">
+                <div class="p-5 flex flex-col gap-3">
+                    <div class="p-3 text-white flex justify-between items-center gap-24">
+                        <span id="err_title" class="text-xl font-semibold">Error Title</span>
+                        <span class="text-xl font-semibold">ERROR</span>
+                        <span id="err_code" class="text-xl font-semibold">Error Code</span>
+                    </div>
+                    <hr class="border border-white">
+                    <div id="err_desc" class="p-3 text-xl font-semibold text-center text-white drop-shadow">Error Description</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{>footer}}
+    <script src="js/main.js"></script>
+</body>
+</html>
